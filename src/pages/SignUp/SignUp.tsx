@@ -89,7 +89,7 @@ const SignUp: React.FC = () => {
     } else {
       setIsCustomBank(false);
       setFormData({ ...formData, bank: value });
-      console.log(sentOtp);
+      console.log(sentOtp + "test");
     }
   };
 
