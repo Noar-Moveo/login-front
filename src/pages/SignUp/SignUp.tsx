@@ -89,9 +89,10 @@ const SignUp: React.FC = () => {
     } else {
       setIsCustomBank(false);
       setFormData({ ...formData, bank: value });
+      console.log(sentOtp);
     }
   };
-  sentOtp;
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
