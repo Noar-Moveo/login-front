@@ -7,6 +7,7 @@ export const outerContainer: SxProps = {
   alignItems: "center",
   height: "100vh",
   width: "100vw",
+  textAlign: "right",
 };
 
 export const innerContainer: SxProps = {
@@ -14,13 +15,14 @@ export const innerContainer: SxProps = {
   flexDirection: "column",
   alignItems: "center",
   width: "100%",
+  textAlign: "right",
   //border: "5px solid red",
 };
-
 
 export const formContainer: SxProps<Theme> = {
   display: "flex",
   flexDirection: "column",
+  textAlign: "right",
 };
 
 export const buttonBox: SxProps<Theme> = {
@@ -38,7 +40,7 @@ export const title: SxProps<Theme> = {
   fontSize: "25px",
   fontWeight: 400,
   lineHeight: "30.48px",
-  textAlign: "left",
+  textAlign: "right",
 };
 
 export const subtitle: SxProps<Theme> = {
@@ -46,44 +48,10 @@ export const subtitle: SxProps<Theme> = {
   fontSize: "15px",
   fontWeight: 400,
   lineHeight: "18.29px",
-  textAlign: "left",
+  textAlign: "right",
+  marginTop: "10px",
 };
 
-// import { SxProps } from "@mui/system";
-
-// export const outerContainer: SxProps = {
-//   display: "flex",
-//   justifyContent: "center",
-//   alignItems: "center",
-//   height: "100vh",
-//   width: "100vw",
-// };
-
-// export const innerContainer: SxProps = {
-//   display: "flex",
-//   flexDirection: "column",
-//   alignItems: "center",
-//   width: "100%",
-//   //border: "5px solid red",
-// };
-
-// export const formContainer: SxProps = {
-//   display: "flex",
-//   flexDirection: "column",
-//   alignItems: "center",
-//   width: "100%",
-//   maxWidth: "600px",
-//   //border: "5px solid red",
-// };
-
-// export const buttonBox: SxProps = {
-//   display: "flex",
-//   justifyContent: "space-between",
-//   width: "100%",
-//   marginTop: "20px",
-//   //border: "5px solid blue",
-// };
-
-// export const button: SxProps = {
-//   width: "48%",
-// };
+export const TermAndConditions_: SxProps<Theme> = {
+  testAlign: "right",
+};

@@ -20,6 +20,7 @@ const Home: React.FC = () => {
     navigate("/signup", { state: { fromHome: true } });
   };
 
+
   return (
     <Box sx={styles.outerContainer}>
       <Container maxWidth="sm" sx={styles.innerContainer}>

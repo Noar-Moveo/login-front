@@ -1,12 +1,11 @@
 import axios from "axios";
-import { BASE_URL } from "../constants/constants";
 import { ISignUpFormData } from "../data/types";
 
-const API_URL = `${BASE_URL}/users`;
+//const OTP_API_URL = `${BASE_URL}/otp`;
 
 export const signup = async (formData: ISignUpFormData) => {
   try {
-    const response = await axios.post(`${API_URL}/signup`, formData);
+    const response = await axios.post(`${USER_API_URL}/signup`, formData);
     return response.data;
   } catch (error) {
     console.error("Error signing up:", error);
@@ -14,16 +13,13 @@ export const signup = async (formData: ISignUpFormData) => {
   }
 };
 
-export const sendOtp = async (
-  to: string,
-  channel: string = "sms",
-  locale: string = "en"
-) => {
+export const sendOtp = async (phoneNumber: string) => {
   try {
-    const response = await axios.post(`${API_URL}/send-otp`, {
-      to,
-      channel,
-      locale,
+    const axiosInstance = axios.create({
+      baseURL: "https://localhost:3000/api",
+    });
+    const response = await axiosInstance.post(`/send-otp`, {
+      phoneNumber,
     });
     return response.data;
   } catch (error) {
@@ -32,11 +28,11 @@ export const sendOtp = async (
   }
 };
 
-export const verifyOtp = async (to: string, code: string) => {
+export const verifyOtp = async (phoneNumber: string, receivedOtp: string) => {
   try {
-    const response = await axios.post(`${API_URL}/verify-otp`, {
-      to,
-      code,
+    const response = await axios.post(`${OTP_API_URL}/verify-otp`, {
+      phoneNumber,
+      receivedOtp,
     });
     return response.data;
   } catch (error) {
