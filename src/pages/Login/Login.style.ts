@@ -2,29 +2,26 @@ import { SxProps } from "@mui/system";
 
 export const outerContainer: SxProps = {
   display: "flex",
-  justifyContent: "center",
   alignItems: "center",
+  justifyContent: "center",
   height: "100vh",
-  width: "100vw",
 };
 
 export const innerContainer: SxProps = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  width: "80%",
-  //border: "5px solid blue"
+  padding: 3,
+  boxShadow: 3,
+  borderRadius: 1,
 };
 
 export const title: SxProps = {
-  marginBottom: "20px",
+  textAlign: "center",
+  marginBottom: 2,
 };
 
 export const buttonBox: SxProps = {
   display: "flex",
   justifyContent: "space-between",
-  width: "100%",
-  marginTop: "20px",
+  marginTop: 2,
 };
 
 export const button: SxProps = {

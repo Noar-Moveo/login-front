@@ -234,7 +234,8 @@ const SignUp: React.FC = () => {
       if (page === 1) {
         try {
           const axiosInstance = axios.create({
-            baseURL: "http://13.48.136.194/api",
+            // baseURL: "http://13.48.136.194/api",
+            baseURL: "http://localhost:3000/api",
           });
 
           const response = await axiosInstance.post("/otp/send-otp", {
@@ -250,7 +251,8 @@ const SignUp: React.FC = () => {
         const receivedOtp = formData.otp.join("");
         try {
           const axiosInstance = axios.create({
-            baseURL: "http://13.48.136.194/api",
+            //baseURL: "http://13.48.136.194/api",
+            baseURL: "http://localhost:3000/api",
           });
           const response = await axiosInstance.post("/otp/verify-otp", {
             phoneNumber: `${areaCode}${formData.phoneNumber}`,
@@ -295,7 +297,8 @@ const SignUp: React.FC = () => {
 
     try {
       const axiosInstance = axios.create({
-        baseURL: "http://13.48.136.194/api",
+        // baseURL: "http://13.48.136.194/api",
+        baseURL: "http://localhost:3000/api",
       });
       const response = await axiosInstance.post(
         "/users/signup",
@@ -401,7 +404,7 @@ const SignUp: React.FC = () => {
           alternativeLabel
           sx={{
             minHeight: 150,
-            width: "80%",
+            //width: "80%",
           }}
         >
           {steps.map((label) => (

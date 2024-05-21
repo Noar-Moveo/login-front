@@ -1,15 +1,23 @@
 import React from "react";
-import { Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
 
 const SuccessPage: React.FC = () => {
   return (
     <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      height="100vh"
+
     >
-      <Typography variant="h2">Hello New User</Typography>
+      <img
+        src="../../../public/WhatsApp Image 2024-05-21 at 13.59.59.jpeg"
+        alt="Success"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          height: "100%",
+          width: "100%",
+          objectFit: "cover",
+        }}
+      />
     </Box>
   );
 };

@@ -1,11 +1,15 @@
+
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Button, Box, Typography, TextField } from "@mui/material";
 import resources from "../../resources/resources.json";
 import * as styles from "./Home.style";
+import axios from "axios";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -20,9 +24,36 @@ const Home: React.FC = () => {
     navigate("/signup", { state: { fromHome: true } });
   };
 
+  // const axiosInstance = axios.create({
+  //   // baseURL: "http://13.48.136.194/api",
+  //   baseURL: "http://localhost:3000/api",
+  // });
+
+  // const response = await axiosInstance.post("/otp/send-otp", {
+
+  const handleLoginClick = async () => {
+    setError(null);
+    try {
+      const axiosInstance = axios.create({
+        baseURL: "http://localhost:3000/api",
+      });
+      const response = await axiosInstance.post("/users/login", formData);
+      navigate("/success", { state: { fromHome: true } });
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message || "An error occurred. Please try again.";
+      if (errorMessage.includes("This user has no account")) {
+        setError("This user has no account.");
+      } else if (errorMessage.includes("Invalid email or password")) {
+        setError("Invalid email or password.");
+      } else {
+        setError(errorMessage);
+      }
+    }
+  };
 
   return (
-    <Box sx={styles.outerContainer}>
+    <Box sx={styles.outerContainer} >
       <Container maxWidth="sm" sx={styles.innerContainer}>
         <Typography variant="h3" component="h1" sx={styles.title}>
           {resources.Shaniez}
@@ -45,6 +76,11 @@ const Home: React.FC = () => {
           onChange={handleChange}
           autoComplete="off"
         />
+        {error && (
+          <Box sx={{ textAlign: "right", color: "red" }}>
+            <Typography>{error}</Typography>
+          </Box>
+        )}{" "}
         <Box sx={styles.buttonBox}>
           <Button
             variant="contained"
@@ -55,7 +91,7 @@ const Home: React.FC = () => {
           </Button>
           <Button
             variant="contained"
-            onClick={() => navigate("/login")}
+            onClick={handleLoginClick}
             sx={styles.button}
           >
             {resources.Login}
