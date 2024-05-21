@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Container, Button, Box, Typography, TextField } from "@mui/material";
 import axios from "axios";
 import resources from "../../resources/resources.json";
-import * as styles from "./ForgotPassword.style"; // Add styles if necessary
+import * as styles from "./ForgotPassword.style";
 
 const ForgotPassword: React.FC = () => {
   const navigate = useNavigate();
@@ -20,12 +20,15 @@ const ForgotPassword: React.FC = () => {
     setMessage(null);
     setError(null);
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/users/forgot-password",
-        { email }
-      );
-      console.log(response);
+      const axiosInstance = axios.create({
+        baseURL: "http://13.48.136.194/api",
 
+//        baseURL: "http://localhost:3000/api",
+      });
+      const response = await axiosInstance.post("/users/forgot-password", {
+        email,
+      });
+      console.log(response);
       setMessage("Password reset link sent to your email.");
     } catch (error: any) {
       setError("Failed to send reset link. Please try again.");
@@ -40,7 +43,7 @@ const ForgotPassword: React.FC = () => {
         </Typography>
         <TextField
           fullWidth
-          label="כתובת מייל"
+          label="Email"
           name="email"
           type="email"
           margin="normal"
