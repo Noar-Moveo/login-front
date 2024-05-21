@@ -1,10 +1,18 @@
 import { defineConfig } from "vite";
-//çimport react from '@vitejs/plugin-react';
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  transpileDependencies: true,
-  lintOnSave: false,
-  devServer: {
-    proxy: "http://localhost:5815",
+  plugins: [react()],
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:5815",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
+  build: {
+    outDir: "dist",
   },
 });

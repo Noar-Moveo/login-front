@@ -23,7 +23,7 @@ const ForgotPassword: React.FC = () => {
       const axiosInstance = axios.create({
         baseURL: "http://13.48.136.194/api",
 
-//        baseURL: "http://localhost:3000/api",
+        //baseURL: "http://localhost:3000/api",
       });
       const response = await axiosInstance.post("/users/forgot-password", {
         email,

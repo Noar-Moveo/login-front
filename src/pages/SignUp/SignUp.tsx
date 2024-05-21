@@ -297,7 +297,7 @@ const SignUp: React.FC = () => {
 
     try {
       const axiosInstance = axios.create({
-        baseURL: "http://13.48.136.194/api",
+       baseURL: "http://13.48.136.194/api",
         //baseURL: "http://localhost:3000/api",
       });
       const response = await axiosInstance.post(
