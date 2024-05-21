@@ -33,6 +33,7 @@ const Home: React.FC = () => {
         baseURL: "http://localhost:3000/api",
       });
       const response = await axiosInstance.post("/users/login", formData);
+      console.log(response);
       navigate("/success", { state: { fromHome: true } });
     } catch (error: any) {
       const errorMessage =
@@ -103,7 +104,6 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
 
 // import React, { useState } from "react";
 // import { useNavigate } from "react-router-dom";

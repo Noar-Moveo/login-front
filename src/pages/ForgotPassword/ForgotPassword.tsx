@@ -13,6 +13,7 @@ const ForgotPassword: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+    console.log(navigate);
   };
 
   const handleSendClick = async () => {
@@ -23,6 +24,8 @@ const ForgotPassword: React.FC = () => {
         "http://localhost:3000/api/users/forgot-password",
         { email }
       );
+      console.log(response);
+
       setMessage("Password reset link sent to your email.");
     } catch (error: any) {
       setError("Failed to send reset link. Please try again.");
