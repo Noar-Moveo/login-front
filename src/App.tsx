@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/HomePage/Home";
 import SignUp from "./pages/SignUp/SignUp";
-import Login from "./pages/Login/Login";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import SuccessPage from "./pages/SuccessPage/SuccessPage";
 
 const App: React.FC = () => {
@@ -11,7 +11,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/success" element={<SuccessPage />} />
       </Routes>
     </Router>

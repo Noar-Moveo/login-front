@@ -41,5 +41,7 @@
   "accountNumber": "מספר חשבון",
   "creditCardNumber": "מספר כרטיס אשראי",
   "expirationDate": "תאריך תפוגה",
-  "phoneNumber": "מספר טלפון"
+  "phoneNumber": "מספר טלפון",
+  "ForgotPassword": "שכחתי סיסמה",
+  "SendResetLink": "שלח אימייל לאיתחול סיסמה"
 }
