@@ -203,6 +203,129 @@ const SignUp: React.FC = () => {
     return newErrors;
   };
 
+  // const handleNext = async () => {
+  //   setErrors({});
+
+  //   const newErrors = validateFields({
+  //     phoneNumber: {
+  //       required: page === 1,
+  //       min: 9,
+  //       max: 9,
+  //       customValidation: (value) =>
+  //         /^(50|52|53|54|55|57|58)\d{7}$/.test(value),
+  //     },
+  //     otp: { required: page === 2 },
+  //     email: {
+  //       required: page === 3,
+  //       customValidation: (value) =>
+  //         /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value),
+  //     },
+  //     password: { required: page === 3, min: 12 },
+  //     firstName: {
+  //       required: page === 4,
+  //       customValidation: (value) => /^[a-zA-Z]{1,50}$/.test(value),
+  //     },
+  //     lastName: {
+  //       required: page === 4,
+  //       customValidation: (value) => /^[a-zA-Z]{1,50}$/.test(value),
+  //     },
+  //     dateOfBirth: {
+  //       required: page === 4,
+  //       customValidation: (value) => new Date(value) < new Date(),
+  //     },
+  //     companyName: {
+  //       required: page === 4,
+  //       customValidation: (value) => /^[a-zA-Z0-9]{1,50}$/.test(value),
+  //     },
+  //     businessID: {
+  //       required: page === 4,
+  //       customValidation: (value) => /^\d{8,9}$/.test(value),
+  //     },
+  //     agreedToTerms: { required: page === 4 },
+  //     creditCardName: {
+  //       required: page === 5,
+  //       customValidation: (value) => /^[a-zA-Z]{1,50}$/.test(value),
+  //     },
+  //     bank: { required: page === 5 },
+  //     branch: {
+  //       required: page === 5,
+  //       customValidation: (value) => /^\d{3}$/.test(value),
+  //     },
+  //     accountNumber: {
+  //       required: page === 5,
+  //       customValidation: (value) => /^\d{1,9}$/.test(value),
+  //     },
+  //     creditCardNumber: {
+  //       required: page === 6,
+  //       customValidation: (value) => /^\d{16}$/.test(value),
+  //     },
+  //     expirationDate: {
+  //       required: page === 6,
+  //       customValidation: (value) => new Date(value) > new Date(),
+  //     },
+  //     cvv: {
+  //       required: page === 6,
+  //       customValidation: (value) => /^\d{3}$/.test(value),
+  //     },
+  //   });
+
+  //   if (Object.keys(newErrors).length === 0) {
+  //     if (page === 1) {
+  //       try {
+  //         const axiosInstance = axios.create({
+  //           //baseURL: "http://localhost:3000/api",
+  //           baseURL: "http://13.48.136.194/api",
+
+  //         });
+
+  //         const response = await axiosInstance.post("/otp/send-otp", {
+  //           phoneNumber: `${areaCode}${formData.phoneNumber}`,
+  //         });
+  //         setSentOtp(response.data.otp);
+  //         setPage(2);
+  //       } catch (error) {
+  //         console.error("Error sending OTP:", error);
+  //         setErrors({ phoneNumber: "Failed to send OTP. Please try again." });
+  //       }
+  //     } else if (page === 2) {
+  //       const receivedOtp = formData.otp.join("");
+  //       try {
+  //         const axiosInstance = axios.create({
+  //           //baseURL: "http://localhost:3000/api",
+  //           baseURL: "http://13.48.136.194/api",
+
+  //         });
+  //         const response = await axiosInstance.post("/otp/verify-otp", {
+  //           phoneNumber: `${areaCode}${formData.phoneNumber}`,
+  //           receivedOtp,
+  //         });
+  //         if (response.data.message === "OTP verified successfully") {
+  //           setPage(3);
+  //         } else {
+  //           setErrors({ otp: "שגוי OTP" });
+  //         }
+  //       } catch (error) {
+  //         if (axios.isAxiosError(error)) {
+  //           if (error.response && error.response.status === 400) {
+  //             setErrors({ otp: "שגוי OTP" });
+  //           } else {
+  //             console.error("Error verifying OTP:", error);
+  //             setErrors({ otp: "שגוי OTP" });
+  //           }
+  //         } else {
+  //           console.error("Unknown error verifying OTP:", error);
+  //           setErrors({ otp: "An unknown error occurred. Please try again." });
+  //         }
+  //       }
+  //     } else if (page === 6) {
+  //       await handleSubmit();
+  //     } else {
+  //       setPage((prevPage) => prevPage + 1);
+  //     }
+  //   } else {
+  //     setErrors(newErrors);
+  //   }
+  // };
   const handleNext = async () => {
     setErrors({});
 
@@ -223,11 +346,13 @@ const SignUp: React.FC = () => {
       password: { required: page === 3, min: 12 },
       firstName: {
         required: page === 4,
-        customValidation: (value) => /^[a-zA-Z]{1,50}$/.test(value),
+        customValidation: (value) =>
+          /^[\u0590-\u05FFa-zA-Z]{1,50}$/.test(value),
       },
       lastName: {
         required: page === 4,
-        customValidation: (value) => /^[a-zA-Z]{1,50}$/.test(value),
+        customValidation: (value) =>
+          /^[\u0590-\u05FFa-zA-Z]{1,50}$/.test(value),
       },
       dateOfBirth: {
         required: page === 4,
@@ -235,7 +360,8 @@ const SignUp: React.FC = () => {
       },
       companyName: {
         required: page === 4,
-        customValidation: (value) => /^[a-zA-Z0-9]{1,50}$/.test(value),
+        customValidation: (value) =>
+          /^[\u0590-\u05FFa-zA-Z0-9]{1,50}$/.test(value),
       },
       businessID: {
         required: page === 4,
@@ -244,7 +370,8 @@ const SignUp: React.FC = () => {
       agreedToTerms: { required: page === 4 },
       creditCardName: {
         required: page === 5,
-        customValidation: (value) => /^[a-zA-Z]{1,50}$/.test(value),
+        customValidation: (value) =>
+          /^[\u0590-\u05FFa-zA-Z]{1,50}$/.test(value),
       },
       bank: { required: page === 5 },
       branch: {
@@ -273,9 +400,7 @@ const SignUp: React.FC = () => {
       if (page === 1) {
         try {
           const axiosInstance = axios.create({
-            //baseURL: "http://localhost:3000/api",
             baseURL: "http://13.48.136.194/api",
-
           });
 
           const response = await axiosInstance.post("/otp/send-otp", {
@@ -291,9 +416,7 @@ const SignUp: React.FC = () => {
         const receivedOtp = formData.otp.join("");
         try {
           const axiosInstance = axios.create({
-            //baseURL: "http://localhost:3000/api",
             baseURL: "http://13.48.136.194/api",
-
           });
           const response = await axiosInstance.post("/otp/verify-otp", {
             phoneNumber: `${areaCode}${formData.phoneNumber}`,
@@ -349,7 +472,6 @@ const SignUp: React.FC = () => {
       const axiosInstance = axios.create({
         //baseURL: "http://localhost:3000/api",
         baseURL: "http://13.48.136.194/api",
-
       });
       const response = await axiosInstance.post(
         "/users/signup",
