@@ -5,20 +5,10 @@ import SignUp from "./pages/SignUp/SignUp";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import SuccessPage from "./pages/SuccessPage/SuccessPage";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
-// import { createTheme, ThemeProvider } from "@mui/material/styles";
-// import CssBaseline from "@mui/material/CssBaseline";
 import PasswordResetSuccess from "./pages/ResetPassword/PasswordResetSuccess";
-
-// const theme = createTheme({
-//   typography: {
-//     fontFamily: "Alef, sans-serif",
-//   },
-// });
 
 const App: React.FC = () => {
   return (
-    // <ThemeProvider theme={theme}>
-    // <CssBaseline />
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -32,7 +22,6 @@ const App: React.FC = () => {
         />
       </Routes>
     </Router>
-    // </ThemeProvider>
   );
 };
 
