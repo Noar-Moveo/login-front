@@ -5,7 +5,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import SuccessPage from "./pages/SuccessPage/SuccessPage";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
-import PasswordResetSuccess from "./pages/ResetPassword/PasswordResetSuccess.tsx";
+import PasswordResetSuccess from "./pages/ResetPassword/PasswordResetSuccess";
 
 const App: React.FC = () => {
   return (
