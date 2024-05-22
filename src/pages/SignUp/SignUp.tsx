@@ -334,65 +334,65 @@ const SignUp: React.FC = () => {
         required: page === 1,
         min: 9,
         max: 9,
-        customValidation: (value) =>
+        customValidation: (value: string) =>
           /^(50|52|53|54|55|57|58)\d{7}$/.test(value),
       },
       otp: { required: page === 2 },
       email: {
         required: page === 3,
-        customValidation: (value) =>
+        customValidation: (value: string) =>
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value),
       },
       password: { required: page === 3, min: 12 },
       firstName: {
         required: page === 4,
-        customValidation: (value) =>
+        customValidation: (value: string) =>
           /^[\u0590-\u05FFa-zA-Z]{1,50}$/.test(value),
       },
       lastName: {
         required: page === 4,
-        customValidation: (value) =>
+        customValidation: (value: string) =>
           /^[\u0590-\u05FFa-zA-Z]{1,50}$/.test(value),
       },
       dateOfBirth: {
         required: page === 4,
-        customValidation: (value) => new Date(value) < new Date(),
+        customValidation: (value: string) => new Date(value) < new Date(),
       },
       companyName: {
         required: page === 4,
-        customValidation: (value) =>
+        customValidation: (value: string) =>
           /^[\u0590-\u05FFa-zA-Z0-9]{1,50}$/.test(value),
       },
       businessID: {
         required: page === 4,
-        customValidation: (value) => /^\d{8,9}$/.test(value),
+        customValidation: (value: string) => /^\d{8,9}$/.test(value),
       },
       agreedToTerms: { required: page === 4 },
       creditCardName: {
         required: page === 5,
-        customValidation: (value) =>
+        customValidation: (value: string) =>
           /^[\u0590-\u05FFa-zA-Z]{1,50}$/.test(value),
       },
       bank: { required: page === 5 },
       branch: {
         required: page === 5,
-        customValidation: (value) => /^\d{3}$/.test(value),
+        customValidation: (value: string) => /^\d{3}$/.test(value),
       },
       accountNumber: {
         required: page === 5,
-        customValidation: (value) => /^\d{1,9}$/.test(value),
+        customValidation: (value: string) => /^\d{1,9}$/.test(value),
       },
       creditCardNumber: {
         required: page === 6,
-        customValidation: (value) => /^\d{16}$/.test(value),
+        customValidation: (value: string) => /^\d{16}$/.test(value),
       },
       expirationDate: {
         required: page === 6,
-        customValidation: (value) => new Date(value) > new Date(),
+        customValidation: (value: string) => new Date(value) > new Date(),
       },
       cvv: {
         required: page === 6,
-        customValidation: (value) => /^\d{3}$/.test(value),
+        customValidation: (value: string) => /^\d{3}$/.test(value),
       },
     });
 
