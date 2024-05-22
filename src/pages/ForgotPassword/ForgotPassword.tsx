@@ -13,7 +13,6 @@ const ForgotPassword: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
-    console.log(navigate);
   };
 
   const handleSendClick = async () => {
@@ -22,17 +21,20 @@ const ForgotPassword: React.FC = () => {
     try {
       const axiosInstance = axios.create({
         baseURL: "http://13.48.136.194/api",
-
         //baseURL: "http://localhost:3000/api",
       });
       const response = await axiosInstance.post("/users/forgot-password", {
         email,
       });
-      console.log(response);
       setMessage("Password reset link sent to your email.");
+      console.log(response);
     } catch (error: any) {
       setError("Failed to send reset link. Please try again.");
     }
+  };
+
+  const handleBackClick = () => {
+    navigate("/");
   };
 
   return (
@@ -68,6 +70,15 @@ const ForgotPassword: React.FC = () => {
             sx={styles.button}
           >
             {resources.SendResetLink}
+          </Button>
+        </Box>
+        <Box sx={styles.buttonBox}>
+          <Button
+            variant="outlined"
+            onClick={handleBackClick}
+            sx={styles.button}
+          >
+            {resources.Back}
           </Button>
         </Box>
       </Container>

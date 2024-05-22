@@ -11,7 +11,7 @@ export const innerContainer: SxProps = {
   padding: 3,
   boxShadow: 3,
   borderRadius: 1,
-  backgroundColor: "white",
+  //backgroundColor: "white",
 };
 
 export const title: SxProps = {
