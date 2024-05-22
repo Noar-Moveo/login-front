@@ -26,10 +26,10 @@ const ForgotPassword: React.FC = () => {
       const response = await axiosInstance.post("/users/forgot-password", {
         email,
       });
-      setMessage("Password reset link sent to your email.");
+      setMessage("לינק לחידוש סיסמה נשלח למייל");
       console.log(response);
     } catch (error: any) {
-      setError("Failed to send reset link. Please try again.");
+      setError("שגיאה");
     }
   };
 

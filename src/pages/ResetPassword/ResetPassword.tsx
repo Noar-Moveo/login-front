@@ -54,7 +54,7 @@ const ResetPassword: React.FC = () => {
       );
       navigate("/password-reset-success");
     } catch (error: any) {
-      setError("Failed to reset password. Please try again.");
+      setError("שגיאה");
     }
   };
 
