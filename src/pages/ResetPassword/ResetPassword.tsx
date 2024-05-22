@@ -58,7 +58,7 @@ const ResetPassword: React.FC = () => {
     <Box>
       <Container maxWidth="sm">
         <Typography variant="h4" component="h1">
-          Reset Password
+          איתחול סיסמה
         </Typography>
         <TextField
           fullWidth
@@ -92,7 +92,7 @@ const ResetPassword: React.FC = () => {
         )}
         <Box>
           <Button variant="contained" onClick={handleResetPassword}>
-            Reset Password
+            איתחול סיסמה
           </Button>
         </Box>
       </Container>
