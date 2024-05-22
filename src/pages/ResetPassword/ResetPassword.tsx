@@ -26,7 +26,12 @@ const ResetPassword: React.FC = () => {
 
   const handleResetPassword = async () => {
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      setError("סיסמאות לא תואמות");
+      return;
+    }
+
+    if (password.length < 12) {
+      setError("סיסמה צריכה להיות בת 12 תווים לפחות");
       return;
     }
 
@@ -35,9 +40,8 @@ const ResetPassword: React.FC = () => {
 
     try {
       const axiosInstance = axios.create({
-        baseURL: "http://13.48.136.194/api",
-
-        //baseURL: "http://localhost:3000/api",
+        // baseURL: "http://13.48.136.194/api",
+        baseURL: "http://localhost:3000/api",
       });
       const response = await axiosInstance.post("/users/reset-password", {
         token,
@@ -48,7 +52,7 @@ const ResetPassword: React.FC = () => {
       setMessage(
         "Password reset successfully. Please login with your new password."
       );
-      navigate("/success");
+      navigate("/password-reset-success");
     } catch (error: any) {
       setError("Failed to reset password. Please try again.");
     }
