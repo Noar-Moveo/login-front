@@ -124,7 +124,8 @@ const SignUp: React.FC = () => {
       try {
         const axiosInstance = axios.create({
           //baseURL: "http://localhost:3000/api",
-          baseURL: "http://13.48.136.194/api",
+          
+        baseURL: "http://13.48.136.194/api",
         });
         const response = await axiosInstance.post("users/check-email", {
           email: value,
@@ -284,6 +285,7 @@ const SignUp: React.FC = () => {
         try {
           const axiosInstance = axios.create({
             baseURL: "http://13.48.136.194/api",
+            //baseURL: "http://localhost:3000/api",
           });
 
           const response = await axiosInstance.post("/otp/send-otp", {
@@ -300,6 +302,7 @@ const SignUp: React.FC = () => {
         try {
           const axiosInstance = axios.create({
             baseURL: "http://13.48.136.194/api",
+            //baseURL: "http://localhost:3000/api",
           });
           const response = await axiosInstance.post("/otp/verify-otp", {
             phoneNumber: `${areaCode}${formData.phoneNumber}`,
@@ -353,7 +356,7 @@ const SignUp: React.FC = () => {
 
     try {
       const axiosInstance = axios.create({
-        //baseURL: "http://localhost:3000/api",
+      //baseURL: "http://localhost:3000/api",
         baseURL: "http://13.48.136.194/api",
       });
       const response = await axiosInstance.post(
@@ -631,7 +634,7 @@ const SignUp: React.FC = () => {
           </Box>
         )}
         {page === 4 && (
-          <Box sx={{ ...formContainer, marginTop: "100px" }}>
+          <Box sx={{ ...formContainer, marginBottom: "-100px" }}>
             <Typography variant="h4" component="h1" sx={title}>
               {resources.DefinitionOfProfileTitle}
             </Typography>
