@@ -10,8 +10,15 @@ const PasswordResetSuccess: React.FC = () => {
   };
 
   return (
-    <Box sx={{ textAlign: "center", marginTop: 4 }}>
-      <Container maxWidth="sm">
+    <Box
+      sx={{
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Container maxWidth="sm" sx={{ textAlign: "center" }}>
         <Typography variant="h4" component="h1" sx={{ marginBottom: 2 }}>
           הסיסמה שונתה בהצלחה!
         </Typography>
