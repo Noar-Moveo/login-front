@@ -108,7 +108,9 @@ const SuccessPage: React.FC = () => {
           sx={{
             backgroundColor: "#e0e0e0",
             color: "black",
-            width: "100%",
+            width: "auto",
+            minWidth: "100px",
+            padding: "6px 16px",
           }}
         >
           התנתקות

@@ -631,7 +631,7 @@ const SignUp: React.FC = () => {
           </Box>
         )}
         {page === 4 && (
-          <Box sx={formContainer}>
+          <Box sx={{ ...formContainer, marginTop: "100px" }}>
             <Typography variant="h4" component="h1" sx={title}>
               {resources.DefinitionOfProfileTitle}
             </Typography>

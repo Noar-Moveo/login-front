@@ -1,6 +1,7 @@
 import { SxProps } from "@mui/system";
 import { Theme } from "@mui/material/styles";
 
+
 export const outerContainer: SxProps = {
   display: "flex",
   justifyContent: "center",
@@ -55,3 +56,4 @@ export const subtitle: SxProps<Theme> = {
 export const TermAndConditions_: SxProps<Theme> = {
   testAlign: "right",
 };
+
