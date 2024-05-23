@@ -35,6 +35,11 @@ const ResetPassword: React.FC = () => {
       return;
     }
 
+    if (/\s/.test(password)) {
+      setError("סיסמה לא יכולה לכלול רווחים");
+      return;
+    }
+
     setMessage(null);
     setError(null);
 
