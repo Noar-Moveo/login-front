@@ -487,7 +487,7 @@ const SignUp: React.FC = () => {
               }}
             >
               <FormControl fullWidth margin="normal" variant="outlined">
-                <InputLabel id="areaCode-label">Area Code</InputLabel>
+                <InputLabel id="areaCode-label">קידומת</InputLabel>
                 <Select
                   labelId="areaCode-label"
                   id="areaCode"
