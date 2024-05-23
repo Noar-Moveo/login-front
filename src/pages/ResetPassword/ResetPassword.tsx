@@ -59,9 +59,16 @@ const ResetPassword: React.FC = () => {
   };
 
   return (
-    <Box>
-      <Container maxWidth="sm">
-        <Typography variant="h4" component="h1">
+    <Box
+      sx={{
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Container maxWidth="sm" sx={{ textAlign: "center" }}>
+        <Typography variant="h4" component="h1" sx={{ marginBottom: 2 }}>
           איתחול סיסמה
         </Typography>
         <TextField
@@ -94,7 +101,7 @@ const ResetPassword: React.FC = () => {
             <Typography>{error}</Typography>
           </Box>
         )}
-        <Box>
+        <Box sx={{ marginTop: 2 }}>
           <Button variant="contained" onClick={handleResetPassword}>
             איתחול סיסמה
           </Button>
