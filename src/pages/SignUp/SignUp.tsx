@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { SelectChangeEvent } from "@mui/material";
+import { Link as MuiLink } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -564,6 +565,24 @@ const SignUp: React.FC = () => {
                   {errors.otp}
                 </Typography>
               )}
+              <MuiLink
+                component="button"
+                variant="body2"
+                onClick={(e) => e.preventDefault()}
+                sx={{
+                  textDecoration: "underline",
+                  marginTop: 2,
+                  cursor: "pointer",
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                  "&:active": {
+                    color: "secondary.main",
+                  },
+                }}
+              >
+                שליחה חוזרת
+              </MuiLink>
               <Box sx={buttonBox}>
                 <Button variant="outlined" sx={button} onClick={handleBack}>
                   {resources.Back}
