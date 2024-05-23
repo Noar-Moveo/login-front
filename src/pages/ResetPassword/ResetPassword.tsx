@@ -66,7 +66,7 @@ const ResetPassword: React.FC = () => {
         </Typography>
         <TextField
           fullWidth
-          label="New Password"
+          label="סיסמה חדשה"
           name="password"
           type="password"
           margin="normal"
@@ -76,7 +76,7 @@ const ResetPassword: React.FC = () => {
         />
         <TextField
           fullWidth
-          label="Confirm Password"
+          label="אישור סיסמה"
           name="confirmPassword"
           type="password"
           margin="normal"

@@ -111,7 +111,7 @@ const SuccessPage: React.FC = () => {
             width: "100%",
           }}
         >
-          Logout
+          התנתקות
         </Button>
       </Box>
     </Container>

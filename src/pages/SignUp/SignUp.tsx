@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -50,12 +48,12 @@ const bankOptions = [
 ];
 
 const steps = [
-  "Phone Number",
-  "Verify OTP",
-  "Email and Password",
-  "Profile Details",
-  "Bank Details",
-  "Credit Card Details",
+  "מספר טלפון",
+  "OTP אימות",
+  "מייל וסיסמה",
+  "הגדרות פרופיל",
+  "פרטי בנק",
+  "פרטי כרטיס אשראי",
 ];
 
 const SignUp: React.FC = () => {
