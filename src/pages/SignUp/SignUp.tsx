@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { SelectChangeEvent } from "@mui/material";
+
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {
@@ -18,6 +20,9 @@ import {
   Modal,
   MenuItem,
   IconButton,
+  Select,
+  FormControl,
+  InputLabel,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -139,8 +144,8 @@ const SignUp: React.FC = () => {
     }
   };
 
-  const handleAreaCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAreaCode(e.target.value);
+  const handleAreaCodeChange = (e: SelectChangeEvent<string>) => {
+    setAreaCode(e.target.value as string);
   };
 
   const handleOtpChange = (index: number, value: string) => {
@@ -481,22 +486,42 @@ const SignUp: React.FC = () => {
                 handleNext();
               }}
             >
-              <TextField
-                fullWidth
-                id="areaCode"
-                label="Area Code"
-                name="areaCode"
-                margin="normal"
-                select
-                SelectProps={{ native: true }}
-                value={areaCode}
-                onChange={handleAreaCodeChange}
-              >
-                <option value="+972">+972</option>
-                <option value="+1">+1</option>
-                <option value="+44">+44</option>
-                <option value="+91">+91</option>
-              </TextField>
+              <FormControl fullWidth margin="normal" variant="outlined">
+                <InputLabel id="areaCode-label">Area Code</InputLabel>
+                <Select
+                  labelId="areaCode-label"
+                  id="areaCode"
+                  value={areaCode}
+                  onChange={handleAreaCodeChange}
+                  label="קידומת"
+                  sx={{ backgroundColor: "#f0f0f0" }}
+                >
+                  <MenuItem
+                    value="+972"
+                    sx={{ paddingBottom: 1, backgroundColor: "#f0f0f0" }}
+                  >
+                    +972
+                  </MenuItem>
+                  <MenuItem
+                    value="+1"
+                    sx={{ paddingBottom: 1, backgroundColor: "#f0f0f0" }}
+                  >
+                    +1
+                  </MenuItem>
+                  <MenuItem
+                    value="+44"
+                    sx={{ paddingBottom: 1, backgroundColor: "#f0f0f0" }}
+                  >
+                    +44
+                  </MenuItem>
+                  <MenuItem
+                    value="+91"
+                    sx={{ paddingBottom: 1, backgroundColor: "#f0f0f0" }}
+                  >
+                    +91
+                  </MenuItem>
+                </Select>
+              </FormControl>
               {renderField("phoneNumber", resources.phoneNumber)}
               <Box sx={buttonBox}>
                 <Button
